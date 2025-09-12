@@ -20,7 +20,7 @@ It's completely free and open source, and it implements pretty much everything y
 
 Here are my [socials](https://linktr.ee/nicowired) in case you want to reach out, always fun meeting new people!
 
-## Controles
+## Controls
 These are the default controls, but you can change them in the settings (you'll need to change them if you don't have a numpad):
 - A: Move left
 - D: Move right
