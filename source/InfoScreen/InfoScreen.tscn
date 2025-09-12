@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmo8qvyy2krdo"]
+
+[ext_resource type="Texture2D" uid="uid://cd2fenrspmnl" path="res://assets/sprites/tilemaps/gui_stuff2.png" id="1_4ysam"]
+[ext_resource type="Script" uid="uid://dof3om4gfpu30" path="res://source/InfoScreen/info_screen.gd" id="1_ekniq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekniq"]
+texture = ExtResource("1_4ysam")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[node name="InfoScreen" type="CenterContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ekniq")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ekniq")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+text = "Info text goes here."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+ellipsis_char = "-"

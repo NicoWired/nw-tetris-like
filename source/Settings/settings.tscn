@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=3 uid="uid://83w7irgkjby0"]
+
+[ext_resource type="Script" uid="uid://djcsrjvtjsnw5" path="res://source/Settings/settings.gd" id="1_bi6g2"]
+[ext_resource type="Texture2D" uid="uid://c7hfyfcqwggdp" path="res://assets/sprites/tilemaps/gui_stuff.png" id="1_cyr3i"]
+[ext_resource type="PackedScene" uid="uid://crovh1dl0sxge" path="res://source/Settings/keybinds_menu.tscn" id="3_bi6g2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryymq"]
+atlas = ExtResource("1_cyr3i")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bi6g2"]
+texture = SubResource("AtlasTexture_ryymq")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.12738
+region_rect = Rect2(0, 0, 24, 24)
+
+[node name="Settings" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bi6g2")
+
+[node name="MainScreen" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="PanelContainer" parent="MainScreen"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bi6g2")
+
+[node name="MainVBox" type="VBoxContainer" parent="MainScreen/Background"]
+layout_mode = 2
+
+[node name="TopButtons" type="HBoxContainer" parent="MainScreen/Background/MainVBox"]
+visible = false
+layout_mode = 2
+
+[node name="Keybinds" type="Label" parent="MainScreen/Background/MainVBox/TopButtons"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Keybinds"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Audio" type="Label" parent="MainScreen/Background/MainVBox/TopButtons"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Audio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsMargin" type="MarginContainer" parent="MainScreen/Background/MainVBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="SettingsCenter" type="CenterContainer" parent="MainScreen/Background/MainVBox/SettingsMargin"]
+layout_mode = 2
+
+[node name="KeybindsMenu" parent="MainScreen/Background/MainVBox/SettingsMargin/SettingsCenter" instance=ExtResource("3_bi6g2")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BottomButtonsCenter" type="MarginContainer" parent="MainScreen/Background/MainVBox"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="BottomButtonsHBox" type="HBoxContainer" parent="MainScreen/Background/MainVBox/BottomButtonsCenter"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="CancelCenter" type="CenterContainer" parent="MainScreen/Background/MainVBox/BottomButtonsCenter/BottomButtonsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Cancel" type="Button" parent="MainScreen/Background/MainVBox/BottomButtonsCenter/BottomButtonsHBox/CancelCenter"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Cancel"
+
+[node name="AcceptCenter" type="CenterContainer" parent="MainScreen/Background/MainVBox/BottomButtonsCenter/BottomButtonsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Accept" type="Button" parent="MainScreen/Background/MainVBox/BottomButtonsCenter/BottomButtonsHBox/AcceptCenter"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Accept"

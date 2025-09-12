@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://crovh1dl0sxge"]
+
+[ext_resource type="Script" uid="uid://croxs6aructwr" path="res://source/Settings/keybinds_menu.gd" id="1_2ccwa"]
+[ext_resource type="PackedScene" uid="uid://1glwnsrj6toe" path="res://source/Settings/action_input.tscn" id="1_8duqe"]
+
+[node name="KeybindsMenu" type="GridContainer"]
+columns = 2
+script = ExtResource("1_2ccwa")
+
+[node name="RotateCCW" parent="." instance=ExtResource("1_8duqe")]
+layout_mode = 2
+action_name = "rotate_counterclockwise"
+
+[node name="RotateCW" parent="." instance=ExtResource("1_8duqe")]
+layout_mode = 2
+action_name = "rotate_clockwise"
+
+[node name="MoveLeft" parent="." instance=ExtResource("1_8duqe")]
+layout_mode = 2
+action_name = "move_left"
+
+[node name="MoveRight" parent="." instance=ExtResource("1_8duqe")]
+layout_mode = 2
+action_name = "move_right"
+
+[node name="SoftDrop" parent="." instance=ExtResource("1_8duqe")]
+layout_mode = 2
+action_name = "drop_piece"
+
+[node name="HardDrop" parent="." instance=ExtResource("1_8duqe")]
+layout_mode = 2
+action_name = "hard_drop"
+
+[node name="HoldPiece" parent="." instance=ExtResource("1_8duqe")]
+layout_mode = 2
+action_name = "hold_piece"
+
+[node name="StartGame" parent="." instance=ExtResource("1_8duqe")]
+layout_mode = 2
+action_name = "start"
