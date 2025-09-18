@@ -165,6 +165,6 @@ func close_settings() -> void:
 	$Settings.visible = false
 
 func on_settings_clicked() -> void:
-	print("signal received")
-	pause_game()
+	if game_state == game_states.RUNNING:
+		pause_game()
 	$Settings.visible = true

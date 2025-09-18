@@ -8,12 +8,10 @@ func _ready() -> void:
 	%Accept.button_down.connect(on_accept_pressed)
 	
 func on_cancel_pressed() -> void:
-	print("cancel")
 	%KeybindsMenu.cancel_keybdinig()
 	close_settings()
 
 func on_accept_pressed() -> void:
-	print("accept")
 	LoadSaveSettings.save_inputmap_to_file()
 	close_settings()
 
